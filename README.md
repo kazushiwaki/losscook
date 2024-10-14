@@ -104,3 +104,7 @@ Stimulus Autocompleteを使用して高度な検索機能を実装
 **・ユーザーフィードバック機能**  
 **[本リリース]**  
 レシピ投稿内容の調理難易度や所要時間の項目を追加する  
+
+
+## 画面遷移図
+Figma：https://www.figma.com/design/bsmeF2F5tcaoeOxRPpXscb/%E3%83%AD%E3%82%B9%E3%82%AF%E3%83%83%E3%82%AF-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&node-type=canvas&t=XnSKfeob3ZISIsXO-0
