@@ -108,3 +108,7 @@ Stimulus Autocompleteを使用して高度な検索機能を実装
 
 ## 画面遷移図
 Figma：https://www.figma.com/design/bsmeF2F5tcaoeOxRPpXscb/%E3%83%AD%E3%82%B9%E3%82%AF%E3%83%83%E3%82%AF-%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&node-type=canvas&t=XnSKfeob3ZISIsXO-0
+
+
+## ER図
+URL：https://drive.google.com/file/d/1a-sZbtf3yUSWa1Bu9REb_0QwLmPVNC37/view?usp=drive_link
