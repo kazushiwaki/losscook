@@ -10,9 +10,10 @@ class ApplicationController < ActionController::Base
     root_path # ログイン後にリダイレクトする先
   end
 
-  def after_sign_out_path_for(resource_or_scope)
-    root_path # ログアウト後にリダイレクトする先
-  end
+  # 本リリース時にログアウト後の画面遷移を指定したいので残す↓
+  # def after_sign_out_path_for(resource_or_scope)
+  #   root_path # ログアウト後にリダイレクトする先
+  # end
 
   protected
 
