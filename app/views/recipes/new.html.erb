@@ -1,0 +1,29 @@
+<h1>レシピを投稿</h1>
+
+<%= form_with model: @recipe, url: recipes_path, local: true do |f| %>
+  <div>
+    <%= f.label :title, 'タイトル' %><br>
+    <%= f.text_field :title, class: 'border p-2 w-full' %>
+  </div>
+
+  <div>
+    <%= f.label :description, '説明' %><br>
+    <%= f.text_area :description, class: 'border p-2 w-full' %>
+  </div>
+
+  <div>
+    <%= f.label :ingredients_text, '材料' %><br>
+    <%= f.text_area :ingredients_text, class: 'border p-2 w-full' %>
+  </div>
+
+  <div>
+    <%= f.label :step_text, '作り方' %><br>
+    <%= f.text_area :step_text, class: 'border p-2 w-full' %>
+  </div>
+
+  <div class="mt-4">
+    <%= f.submit '投稿する', class: 'bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700' %>
+  </div>
+<% end %>
+
+<%= link_to 'レシピ一覧に戻る', recipes_path, class: 'text-blue-500 hover:underline' %>

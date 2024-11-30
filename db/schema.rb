@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[8.0].define(version: 2024_11_27_075423) do
   create_table "ingredients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -41,6 +42,14 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_27_075423) do
   create_table "recipes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
     t.string "description"
+=======
+ActiveRecord::Schema[8.0].define(version: 2024_11_30_081307) do
+  create_table "recipes", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.text "ingredients_text"
+    t.text "step_text"
+>>>>>>> new-branch-name2
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -61,8 +70,11 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_27_075423) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
   add_foreign_key "ingredients", "recipes"
   add_foreign_key "recipe_images", "recipes"
   add_foreign_key "recipe_steps", "recipes"
+=======
+>>>>>>> new-branch-name2
   add_foreign_key "recipes", "users"
 end

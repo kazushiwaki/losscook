@@ -3,9 +3,19 @@
 one:
   title: MyString
   description: MyString
+<<<<<<< HEAD
+=======
+  ingredients_text: MyText
+  step_text: MyText
+>>>>>>> new-branch-name2
   user: one
 
 two:
   title: MyString
   description: MyString
+<<<<<<< HEAD
+=======
+  ingredients_text: MyText
+  step_text: MyText
+>>>>>>> new-branch-name2
   user: two
