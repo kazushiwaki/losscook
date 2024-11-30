@@ -1,4 +1,7 @@
 class RecipesController < ApplicationController
+  before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
+
   def index
     @recipes = Recipe.includes(:user).order(created_at: :desc)
   end
@@ -16,9 +19,37 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    @recipe = current_user.recipes.find_by(id: params[:id])
+    if @recipe&.update(recipe_params)
+      redirect_to recipe_path(@recipe), notice: "レシピの投稿内容を更新しました！"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @recipe.destroy
+    redirect_to recipes_path, notise: "レシピを削除しました。"
+  end
+
   private
 
   def recipe_params
     params.require(:recipe).permit(:title, :description, :ingredients_text, :step_text)
+  end
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def authorize_user!
+    redirect_to recipes_path, alert: "編集権限がありません！" unless @recipe.user == current_user
   end
 end

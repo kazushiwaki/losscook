@@ -1,0 +1,28 @@
+<h1><%= @recipe.title %></h1>
+
+<div>
+  <h2>説明</h2>
+  <p><%= @recipe.description %></p>
+</div>
+
+<div>
+  <h2>材料</h2>
+  <p><%= @recipe.ingredients_text %></p>
+</div>
+
+<div>
+  <h2>作り方</h2>
+  <p><%= @recipe.step_text %></p>
+</div>
+
+<%= link_to '投稿一覧に戻る', recipes_path, class: 'text-blue-500 hover:underline' %>
+
+<% if current_user == @recipe.user%>
+<%= link_to '編集する', edit_recipe_path(@recipe), class: 'bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700' %>
+<% end %>
+
+<% if current_user == @recipe.user %>
+  <%= form_with model: @recipe, url: recipe_path(@recipe), method: :delete, data: {turbo_confirm: 'このレシピを削除してもよろしいですか？' }, class: 'inline-block' do %>
+    <%= submit_tag '削除', class: 'btn btn-danger bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700' %>
+  <% end %>
+<% end %>
