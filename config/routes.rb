@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  get "home/index"
+  # ルートパスをホームのインデックスアクションに設定
+  root to: "home#index"
+  # ホーム画面のパス
+  get "/home", to: "home#index"
+
+  # レシピのルートを設定
+  resources :recipes, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -10,10 +17,4 @@ Rails.application.routes.draw do
   # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-
-  # Defines the root path route ("/")
-  # root "posts#index"
-
-  root to: "home#index"
-
 end
