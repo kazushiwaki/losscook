@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    redirect_to recipes_path, notise: "レシピを削除しました。"
+    redirect_to recipes_path, notice: "レシピを削除しました。"
   end
 
   private
