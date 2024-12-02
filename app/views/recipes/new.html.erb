@@ -21,6 +21,11 @@
     <%= f.text_area :step_text, class: 'border p-2 w-full' %>
   </div>
 
+  <div>
+    <%= f.label :image, '画像'%>
+    <%= f.file_field :image, class: 'form-control'%>
+  </div>
+
   <div class="mt-4">
     <%= f.submit '投稿する', class: 'bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700' %>
   </div>

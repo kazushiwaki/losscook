@@ -27,6 +27,10 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = current_user.recipes.find_by(id: params[:id])
+    if params[:recipe][:remove_image] == '1'
+      @recipe.image.purge
+    end
+
     if @recipe&.update(recipe_params)
       redirect_to recipe_path(@recipe), notice: "レシピの投稿内容を更新しました！"
     else
@@ -36,13 +40,13 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe.destroy
-    redirect_to recipes_path, notise: "レシピを削除しました。"
+    redirect_to recipes_path, notice: "レシピを削除しました。"
   end
 
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :description, :ingredients_text, :step_text)
+    params.require(:recipe).permit(:title, :description, :ingredients_text, :step_text, :image)
   end
 
   def set_recipe

@@ -23,9 +23,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
+<!--
   <% if flash[:notice] %>
     <div class="alert alert-success">
       <%= flash[:notice] %>
@@ -36,6 +34,17 @@
       <%= flash[:alert] %>
     </div>
   <% end %>
+-->
+
+<% if flash.any? %>
+  <div id="flash-messages" class="fixed top-0 left-0 w-full">
+    <% flash.each do |type, message| %>
+      <div class="flash-message <%= type %> px-4 py-2 text-black">
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
   <nav class="bg-gray-800 p-4">
     <ul class="flex space-x-4">
